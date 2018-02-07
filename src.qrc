@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/icon">
+        <file>resourse/love.ico</file>
+        <file>resourse/Nyaruko.jpg</file>
+    </qresource>
+</RCC>
