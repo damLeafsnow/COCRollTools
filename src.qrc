@@ -3,4 +3,7 @@
         <file>resourse/love.ico</file>
         <file>resourse/Nyaruko.jpg</file>
     </qresource>
+    <qresource lang="json" prefix="/new/json">
+        <file>resourse/feature.json</file>
+    </qresource>
 </RCC>

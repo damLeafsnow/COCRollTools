@@ -486,10 +486,10 @@
             <widget class="QLineEdit" name="lineEdit_miaoshu">
              <property name="font">
               <font>
-               <family>华文仿宋</family>
-               <pointsize>10</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
+               <family>楷体</family>
+               <pointsize>9</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
               </font>
              </property>
              <property name="text">
@@ -520,14 +520,17 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_xinnian">
+            <widget class="QLineEdit" name="lineEdit_conviction">
              <property name="font">
               <font>
-               <family>华文仿宋</family>
-               <pointsize>10</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
+               <family>楷体</family>
+               <pointsize>9</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
               </font>
+             </property>
+             <property name="text">
+              <string>社会坏掉了，而你将成为正义的伙伴。应斩除之物是？（毒品，暴力，种族歧视）</string>
              </property>
              <property name="readOnly">
               <bool>true</bool>
@@ -554,14 +557,17 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_important">
+            <widget class="QLineEdit" name="lineEdit_VIP">
              <property name="font">
               <font>
-               <family>华文仿宋</family>
-               <pointsize>10</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
+               <family>楷体</family>
+               <pointsize>9</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
               </font>
+             </property>
+             <property name="text">
+              <string>名人。偶像或者英雄。当然也许你从未见过他。(电影明星，政治家，音乐家。）</string>
              </property>
              <property name="readOnly">
               <bool>true</bool>
@@ -583,19 +589,22 @@
               </font>
              </property>
              <property name="text">
-              <string>此人重要的原因</string>
+              <string>重要原因</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_reasonofimp">
+            <widget class="QLineEdit" name="lineEdit_VIPreason">
              <property name="font">
               <font>
-               <family>华文仿宋</family>
-               <pointsize>10</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
+               <family>楷体</family>
+               <pointsize>9</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
               </font>
+             </property>
+             <property name="text">
+              <string>他们扰乱了你的人生，你寻求复仇。（射杀爱人之日，国破家亡之时，明镜两分之际）</string>
              </property>
              <property name="readOnly">
               <bool>true</bool>
@@ -622,14 +631,17 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_impplace">
+            <widget class="QLineEdit" name="lineEdit_VIPlace">
              <property name="font">
               <font>
-               <family>华文仿宋</family>
-               <pointsize>10</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
+               <family>楷体</family>
+               <pointsize>9</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
               </font>
+             </property>
+             <property name="text">
+              <string>生命中最高兴时的所在。（初吻时坐着的公园长椅，你的大学）</string>
              </property>
              <property name="readOnly">
               <bool>true</bool>
@@ -656,14 +668,17 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_impthing">
+            <widget class="QLineEdit" name="lineEdit_VIThing">
              <property name="font">
               <font>
-               <family>华文仿宋</family>
-               <pointsize>10</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
+               <family>楷体</family>
+               <pointsize>9</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
               </font>
+             </property>
+             <property name="text">
+              <string>不知真相的东西。（橱柜里的未知信件，奇怪的继承来的风琴，挖出来的奇妙银球）</string>
              </property>
              <property name="readOnly">
               <bool>true</bool>
@@ -690,14 +705,17 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_tedian">
+            <widget class="QLineEdit" name="lineEdit_Feature">
              <property name="font">
               <font>
-               <family>华文仿宋</family>
-               <pointsize>10</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
+               <family>楷体</family>
+               <pointsize>9</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
               </font>
+             </property>
+             <property name="text">
+              <string>好厨子，好吃货。（烤得一手好蛋糕，无米之炊都能做好，优雅的食神）</string>
              </property>
              <property name="readOnly">
               <bool>true</bool>
