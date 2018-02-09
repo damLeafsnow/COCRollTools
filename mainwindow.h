@@ -30,9 +30,29 @@ private slots:
 
     void on_featureButton_clicked();
 
+    void on_STRPoint_valueChanged(int arg1);
+
+    void on_CONPoint_valueChanged(int arg1);
+
+    void on_SIZPoint_valueChanged(int arg1);
+
+    void on_DEXPoint_valueChanged(int arg1);
+
+    void on_APPPoint_valueChanged(int arg1);
+
+    void on_INTPoint_valueChanged(int arg1);
+
+    void on_POWPoint_valueChanged(int arg1);
+
+    void on_EDUPoint_valueChanged(int arg1);
+
+    void on_LUCPoint_valueChanged(int arg1);
+
 private:
     int rollAdBplusC(int A, int B, int C);
     void readJsonData();
+    void changeDBTGValue();
+    void changeMOVValue();
 
 private:
     Ui::MainWindow *ui;
@@ -40,6 +60,7 @@ private:
     QVector<QSpinBox*> pointVec;
     QJsonParseError jsonError;
     QVector<QString> convictionVec, VIPVec, VIPreasonVec, VIPlaceVec, VIThingVec, FeatureVec;
+    QVector<QString> STRVec, CONVec, SIZVec, DEXVec, APPVec, INTVec, POWVec, EDUVec;
 };
 
 #endif // MAINWINDOW_H
