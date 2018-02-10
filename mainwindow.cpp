@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "QRegExp"
+#include "QStringList"
+//#include "QRandomGenerator"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -46,10 +49,21 @@ void MainWindow::on_rollButton_clicked()
 
 int MainWindow::rollAdBplusC(int A = 1, int B = 100, int C = 0) //normal is 1d100+0
 {
+    if(B == 1)
+    {
+        return A * B + C;
+    }
+
+//    QRandomGenerator r(1, B);
+//    for(int i = 0;i < 10; ++i)
+//    {
+//        qDebug() << r.generate() << endl;
+//    }
+
     int point = C;
     for (int i = 0; i < A; ++i)
     {
-        point += 1 + qrand() % (B - 1);
+       point += 1 + qrand() % (B - 1);
     }
     return point;
 }
@@ -387,7 +401,7 @@ void MainWindow::changeDBTGValue()
         int sum1 = sum / 80;
         int sum2 = sum % 80;
         int sum3 = sum1 + (sum2 && 1);
-        qDebug() << "sum1:" << sum1 << "sum2" << sum2 << "sum3" << sum3;
+        //qDebug() << "sum1:" << sum1 << "sum2" << sum2 << "sum3" << sum3;
         ui->DBshow_lineEdit->setText(QString::number(sum3 + 1, 10) + "d6");
         ui->TGshow_lineEdit->setText(QString::number(sum3 + 2, 10));
     }
@@ -662,6 +676,8 @@ void MainWindow::on_POWPoint_valueChanged(int arg1)
 
     ui->SANshow_lineEdit->setText(QString::number(arg1 * 5, 10));
 
+    ui->MPshow_lineEdit->setText(QString::number(arg1, 10));
+
     //change describe text
     int pow = arg1 * 5;
     if(pow >= 210)
@@ -745,3 +761,50 @@ void MainWindow::on_LUCPoint_valueChanged(int arg1)
 {
     ui->LUCshow_lineEdit->setText(QString::number(arg1 * 5, 10));
 }
+
+void MainWindow::on_rollExpressionPushButton_clicked()
+{
+    QString expression = ui->rollExpressionLineEdit->text();
+
+    QStringList strList = expression.split(QRegExp("+"));
+
+    QRegExp pattern("[1-9][0-9]*d[1-9][0-9]*");
+    QRegExp pattern2("[1-9][0-9]*");
+
+    QRegExp reg(pattern);
+    QRegExp reg2(pattern2);
+
+    QString rollText = expression + " = ";
+    int rollAnswer = 0;
+
+    for(QString s : strList)
+    {
+        qDebug() << s << " ";
+        if(reg.exactMatch(s))   //xdy
+        {
+            QStringList tList = s.split(QRegExp("d"));
+            if(!tList.isEmpty())
+            {
+                int x = tList.at(0).toInt();
+                int y = tList.at(1).toInt();
+                int ans = rollAdBplusC(x, y, 0);
+                rollAnswer += ans;
+                rollText.append(s + "(" + QString::number(ans, 10) + ") ");
+            }
+        }
+        else if(reg2.exactMatch(s)) //z
+        {
+            rollText.append("(" + s + ") ");
+            rollAnswer += s.toInt();
+        }
+        else
+        {
+            ui->rollExpressionLineEdit->setToolTip("格式：(个数)d(骰面数)*m + (常数)*n");
+            return;
+        }
+    }
+
+    rollText.append(" = " + QString::number(rollAnswer, 10));
+    ui->rollExpressionTextEdit->setPlainText(rollText);
+}
+

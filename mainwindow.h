@@ -48,6 +48,8 @@ private slots:
 
     void on_LUCPoint_valueChanged(int arg1);
 
+    void on_rollExpressionPushButton_clicked();
+
 private:
     int rollAdBplusC(int A, int B, int C);
     void readJsonData();
